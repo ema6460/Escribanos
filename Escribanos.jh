@@ -1,0 +1,51 @@
+
+
+entity Presentacion {
+	cuitEscribano String,
+    nombre String
+    apellido String
+}
+
+entity ArchivosDetalle{
+    estado EstadoPresentacion
+}
+
+entity Tramite{
+	fecha ZonedDateTime,
+    fechaFin ZonedDateTime,
+	observaciones String
+}
+
+entity Archivos{
+	archivo AnyBlob
+}
+
+entity Escribania {
+	domicilio String
+}
+
+entity Operador {
+	nombre String
+}
+
+
+enum EstadoPresentacion {
+    ENTREGADO, REVISION, LISTO_PARA_RETIRAR
+}
+
+relationship OneToMany {
+	Escribania{presentacion} to Presentacion{escribania},
+    Presentacion{archivosDetalle} to ArchivosDetalle{presentacion},
+    ArchivosDetalle{tramites} to Tramite{archivosDetalle},
+    Tramite{archivos} to Archivos{tramite}
+    Operador{oficina} to Tramite{operador}
+}
+
+relationship OneToOne{
+	Escribania{usuario} to User,
+    Operador{usuario} to User
+    
+}
+
+
+service all with serviceImpl

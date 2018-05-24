@@ -1,0 +1,87 @@
+<div>
+    <h2 data-translate="escribanosApp.tramite.home.title">Tramite</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+<!--                <button class="btn btn-primary" ui-sref="tramite.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="escribanosApp.tramite.home.createLabel">
+                        Create new Tramite
+                    </span>
+                </button>-->
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th>CUIT Escribano</th>
+                    <th>Escribania</th>
+                    <th><span>Fecha Presentacion</span></th>
+                    <th><span data-translate="escribanosApp.tramite.fechaFin">Fecha Fin</span></th>
+                    <th><span data-translate="escribanosApp.tramite.observaciones">Observaciones</span></th>
+                    <th class="text-center">Archivos</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="tramite in vm.tramites track by tramite.id">
+                    <td><a ui-sref="tramite-detail({id:tramite.id})">{{tramite.id}}</a></td>
+                    <td>{{tramite.archivosDetalle.presentacion.cuitEscribano}}</td>
+                    <td>{{tramite.archivosDetalle.presentacion.escribania.usuario.login}}</td>
+                    <td>{{tramite.fecha| date:'mediumDate'}}</td>
+                    <td>{{tramite.fechaFin| date:'mediumDate'}}</td>
+                    <td>{{tramite.observaciones}}</td>
+                    <td class="text-right">
+                        <span ng-if="tramite.archivos[0].archivo">
+                            <a ng-click="vm.openFile(tramite.archivos[0].archivoContentType, tramite.archivos[0].archivo)">
+                               <button type="button" class="btn btn-info">Abrir <span class="glyphicon glyphicon-file"></span></button>
+                            </a>
+                        </span>
+                        
+                        <span ng-if="tramite.archivos[1].archivo">
+                            <a ng-click="vm.openFile(tramite.archivos[1].archivoContentType, tramite.archivos[1].archivo)">
+                                <button type="button" class="btn btn-info">Abrir <span class="glyphicon glyphicon-file"></span></button>
+                            </a>
+                        </span>
+                        
+                        <span ng-if="tramite.archivos[2].archivo">
+                            <a ng-click="vm.openFile(tramite.archivos[2].archivoContentType, tramite.archivos[2].archivo)">
+                                <button type="button" class="btn btn-info">Abrir <span class="glyphicon glyphicon-file"></span></button> 
+                            </a>
+                        </span>  
+                    </td>
+
+
+                    <!--                    <td>{{tramite.archivos}}</td>-->
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <!--                            <button type="submit"
+                                                                ui-sref="tramite-detail({id:tramite.id})"
+                                                                class="btn btn-info btn-sm">
+                                                            <span class="glyphicon glyphicon-eye-open"></span>
+                                                            <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                                                        </button>-->
+                            <button type="submit"
+                                    ui-sref="tramite.edit({id:tramite.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button><!--
+                            <button type="submit"
+                                    ui-sref="tramite.delete({id:tramite.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>-->
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

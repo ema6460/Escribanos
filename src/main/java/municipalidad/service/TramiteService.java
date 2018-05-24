@@ -1,0 +1,41 @@
+package municipalidad.service;
+
+import municipalidad.domain.Tramite;
+import java.util.List;
+import municipalidad.service.dto.TramiteDTO;
+
+/**
+ * Service Interface for managing Tramite.
+ */
+public interface TramiteService {
+
+    /**
+     * Save a tramite.
+     *
+     * @param tramite the entity to save
+     * @return the persisted entity
+     */
+    Tramite save(Tramite tramite);
+
+    /**
+     * Get all the tramites.
+     *
+     * @return the list of entities
+     */
+    List<TramiteDTO> findAll();
+
+    /**
+     * Get the "id" tramite.
+     *
+     * @param id the id of the entity
+     * @return the entity
+     */
+    TramiteDTO findOne(Long id);
+
+    /**
+     * Delete the "id" tramite.
+     *
+     * @param id the id of the entity
+     */
+    void delete(Long id);
+}

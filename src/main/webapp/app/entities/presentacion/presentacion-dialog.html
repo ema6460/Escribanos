@@ -1,0 +1,127 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myPresentacionLabel" data-translate="escribanosApp.presentacion.home.createOrEditLabel">Create or edit a Presentacion</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.presentacion.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   ng-model="vm.presentacion.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="escribanosApp.presentacion.cuitEscribano" for="field_cuitEscribano">Cuit Escribano</label>
+            <input type="text" class="form-control" name="cuitEscribano" id="field_cuitEscribano"
+                   ng-model="vm.presentacion.cuitEscribano"
+                   />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="escribanosApp.presentacion.nombre" for="field_nombre">Nombre</label>
+            <input type="text" class="form-control" name="nombre" id="field_nombre"
+                   ng-model="vm.presentacion.nombre"
+                   />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="escribanosApp.presentacion.apellido" for="field_apellido">Apellido</label>
+            <input type="text" class="form-control" name="apellido" id="field_apellido"
+                   ng-model="vm.presentacion.apellido"
+                   />
+        </div>
+
+
+        <!-- PLANO MENSURA -->
+        <div class="form-group col-xs-4 no-padding-left" ngf-drop ngf-change="vm.setArchivo($file, vm.archivos)">
+            <label class="control-label" for="field_archivo">Plano Mensura</label>
+            <div>
+                <div ng-if="vm.archivos.archivo" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.archivos.archivoContentType, vm.archivos.archivo)">Ver archivo</a>
+                    <button type="button" ng-click="
+                        vm.removeArchivo();
+                        vm.archivos.archivo = null;
+                        vm.archivos.archivoContentType = null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setArchivo($file, vm.archivos)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="archivo" id="field_archivo"
+                   ng-model="vm.archivos.archivo"
+                   />
+            <input type="hidden" class="form-control" name="archivoContentType" id="field_archivoContentType"
+                   ng-model="vm.archivos.archivoContentType" />
+        </div>
+
+        <!-- CERTIFICADO CATASTRAL -->
+        <div class="form-group col-xs-4 no-padding-left" ngf-drop ngf-change="vm.setArchivo($file, vm.archivos1)">
+            <label class="control-label" for="field_archivo">Certificado Catastral</label>
+            <div>
+                <div ng-if="vm.archivos1.archivo" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.archivos1.archivoContentType, vm.archivos1.archivo)" >Ver archivo</a>
+                    <button type="button" ng-click="
+                        vm.removeArchivo();
+                        vm.archivos1.archivo = null;
+                        vm.archivos1.archivoContentType = null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setArchivo($file, vm.archivos1)">
+                    Añadir Archivo
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="archivo1" id="field_archivo1"
+                   ng-model="vm.archivos1.archivo"
+                   />
+            <input type="hidden" class="form-control" name="archivoContentType1" id="field_archivoContentType1"
+                   ng-model="vm.archivos1.archivoContentType" />
+        </div>
+
+        <!-- DECLARACION JURADA -->
+        <div class="form-group col-xs-4 no-padding-left" ngf-drop ngf-change="vm.setArchivo($file, vm.archivos1)">
+            <label class="control-label" for="field_archivo">Declaracion Jurada</label>
+            <div>
+                <div ng-if="vm.archivos2.archivo" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.archivos2.archivoContentType, vm.archivos2.archivo)" >Ver archivo</a>
+                    <button type="button" ng-click="
+                        vm.removeArchivo();
+                        vm.archivos2.archivo = null;
+                        vm.archivos2.archivoContentType = null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setArchivo($file, vm.archivos2)">
+                    Añadir Archivo
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="archivo2" id="field_archivo2"
+                   ng-model="vm.archivos2.archivo"
+                   />
+            <input type="hidden" class="form-control" name="archivoContentType1" id="field_archivoContentType1"
+                   ng-model="vm.archivos2.archivoContentType" />
+        </div>
+    </div>
+
+
+    <div class="row"/>
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+        <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+    </button>
+    <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+        <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+    </button>
+</div>
+</form>

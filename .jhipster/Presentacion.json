@@ -1,0 +1,37 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "archivosDetalle",
+            "otherEntityName": "archivosDetalle",
+            "otherEntityRelationshipName": "presentacion"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "escribania",
+            "otherEntityName": "escribania",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "cuitEscribano",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "apellido",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180515143005",
+    "entityTableName": "presentacion",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

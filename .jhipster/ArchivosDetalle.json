@@ -1,0 +1,30 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "tramites",
+            "otherEntityName": "tramite",
+            "otherEntityRelationshipName": "archivosDetalle"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "presentacion",
+            "otherEntityName": "presentacion",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "estado",
+            "fieldType": "EstadoPresentacion",
+            "fieldValues": "ENTREGADO,REVISION,LISTO_PARA_RETIRAR"
+        }
+    ],
+    "changelogDate": "20180515143006",
+    "entityTableName": "archivos_detalle",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

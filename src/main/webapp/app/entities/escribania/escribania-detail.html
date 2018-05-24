@@ -1,0 +1,27 @@
+
+<div>
+    <h2><span data-translate="escribanosApp.escribania.detail.title">Escribania</span> {{vm.escribania.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="escribanosApp.escribania.domicilio">Domicilio</span></dt>
+        <dd>
+            <span>{{vm.escribania.domicilio}}</span>
+        </dd>
+        <dt><span data-translate="escribanosApp.escribania.usuario">Usuario</span></dt>
+        <dd>
+            {{vm.escribania.usuario.id}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="escribania-detail.edit({id:vm.escribania.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,30 @@
+
+<div>
+    <h2><span data-translate="escribanosApp.archivos.detail.title">Archivos</span> {{vm.archivos.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="escribanosApp.archivos.archivo">Archivo</span></dt>
+        <dd>
+            <div ng-if="vm.archivos.archivo">
+                <a ng-click="vm.openFile(vm.archivos.archivoContentType, vm.archivos.archivo)" data-translate="entity.action.open">open</a>
+                {{vm.archivos.archivoContentType}}, {{vm.byteSize(vm.archivos.archivo)}}
+            </div>
+        </dd>
+        <dt><span data-translate="escribanosApp.archivos.tramite">Tramite</span></dt>
+        <dd>
+            <a ui-sref="tramite-detail({id:vm.archivos.tramite.id})">{{vm.archivos.tramite.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="archivos-detail.edit({id:vm.archivos.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

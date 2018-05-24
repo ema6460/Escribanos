@@ -1,0 +1,24 @@
+
+{
+    "escribanosApp": {
+        "archivosDetalle" : {
+            "home": {
+                "title": "Archivos Detalles",
+                "createLabel": "Crear nuevo Archivos Detalle",
+                "createOrEditLabel": "Crear o editar Archivos Detalle"
+            },
+            "created": "Un nuevo Archivos Detalle ha sido creado con el identificador {{ param }}",
+            "updated": "Un Archivos Detalle ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Archivos Detalle ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Archivos Detalle {{ id }}?"
+            },
+            "detail": {
+                "title": "Archivos Detalle"
+            },
+            "estado": "Estado",
+            "tramites": "Tramites",
+            "presentacion": "Presentacion"
+        }
+    }
+}

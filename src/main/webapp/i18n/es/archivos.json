@@ -1,0 +1,23 @@
+
+{
+    "escribanosApp": {
+        "archivos" : {
+            "home": {
+                "title": "Archivos",
+                "createLabel": "Crear nuevo Archivos",
+                "createOrEditLabel": "Crear o editar Archivos"
+            },
+            "created": "Un nuevo Archivos ha sido creado con el identificador {{ param }}",
+            "updated": "Un Archivos ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Archivos ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Archivos {{ id }}?"
+            },
+            "detail": {
+                "title": "Archivos"
+            },
+            "archivo": "Archivo",
+            "tramite": "Tramite"
+        }
+    }
+}

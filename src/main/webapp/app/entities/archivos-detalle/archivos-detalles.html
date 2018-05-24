@@ -1,0 +1,60 @@
+<div>
+    <h2 data-translate="escribanosApp.archivosDetalle.home.title">Archivos Detalles</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="archivos-detalle.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="escribanosApp.archivosDetalle.home.createLabel">
+                        Create new Archivos Detalle
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="escribanosApp.archivosDetalle.estado">Estado</span></th>
+                    <th><span data-translate="escribanosApp.archivosDetalle.presentacion">Presentacion</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="archivosDetalle in vm.archivosDetalles track by archivosDetalle.id">
+                    <td><a ui-sref="archivos-detalle-detail({id:archivosDetalle.id})">{{archivosDetalle.id}}</a></td>
+                    <td data-translate="{{'escribanosApp.EstadoPresentacion.' + archivosDetalle.estado}}">{{archivosDetalle.estado}}</td>
+                    <td>
+                        <a ui-sref="presentacion-detail({id:archivosDetalle.presentacion.id})">{{archivosDetalle.presentacion.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="archivos-detalle-detail({id:archivosDetalle.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="archivos-detalle.edit({id:archivosDetalle.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="archivos-detalle.delete({id:archivosDetalle.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

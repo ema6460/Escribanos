@@ -1,0 +1,10 @@
+{
+    "escribanosApp": {
+        "EstadoPresentacion" : {
+            "null": "",
+            "ENTREGADO": "ENTREGADO",
+            "REVISION": "REVISION",
+            "LISTO_PARA_RETIRAR": "LISTO_PARA_RETIRAR"
+        }
+    }
+}
